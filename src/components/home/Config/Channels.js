@@ -24,7 +24,6 @@ const body = (
   </>
 );
 const Channel = (props) => {
-
   const dispatch = useDispatch();
   const handleStartChange = (e) => {
     let re = /^[1-9]\d*$/;
@@ -71,9 +70,5 @@ const Channel = (props) => {
     </div>
   );
 };
-
-const mapStateToProps = (state) => ({
-  channel: state.config.channel,
-});
 
 export default Channel;
