@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Tone extends Component {
-  render() {
+const Tone = () => {
     return (
       <div className="form-group">
         <label>Tone</label>
@@ -60,4 +59,4 @@ export default class Tone extends Component {
       </div>
     );
   }
-}
+export default Tone;

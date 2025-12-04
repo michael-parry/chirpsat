@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
-import { connect } from "react-redux";
-import { updateChannel } from "../../../actions/configActions";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  updateChannelStart,
+  updateChannelSpread,
+} from "../../../slices/configSlice";
 
 import HelpModal from "./HelpModal";
 
@@ -22,58 +25,57 @@ const body = (
     </p>
   </>
 );
+const Channel = (props) => {
 
-class Channels extends Component {
-  handleStartChange = e => {
+  const dispatch = useDispatch();
+  const handleStartChange = (e) => {
     let re = /^[1-9]\d*$/;
     if (e.target.value === "" || re.exec(e.target.value)) {
-      this.props.updateChannel(e);
+      dispatch(updateChannelStart(e.target.value));
     }
   };
-  handleSpreadChange = e => {
+  const handleSpreadChange = (e) => {
     let re = /^[1-9]\d*$/;
     if (e.target.value === "" || re.exec(e.target.value)) {
-      this.props.updateChannel(e);
+      dispatch(updateChannelSpread(e.target.value));
     }
   };
-  render() {
-    const { channel } = this.props;
-    return (
-      <div className="form-group">
-        <label>
-          Channels
-          <HelpModal body={body} title="Channels" />
-        </label>
-        <div className="form-row">
-          <div className="input-group col-12">
-            <input
-              type="text"
-              className="form-control"
-              id="options-channel-start"
-              placeholder="start"
-              autoComplete="off"
-              value={channel.start}
-              onChange={this.handleStartChange}
-            />
+  const { channel } = useSelector((state) => state.config);
+  return (
+    <div className="form-group">
+      <label>
+        Channels
+        <HelpModal body={body} title="Channels" />
+      </label>
+      <div className="form-row">
+        <div className="input-group col-12">
+          <input
+            type="text"
+            className="form-control"
+            id="options-channel-start"
+            placeholder="start"
+            autoComplete="off"
+            value={channel.start}
+            onChange={(e) => handleStartChange(e)}
+          />
 
-            <input
-              type="text"
-              className="form-control"
-              id="options-channel-spread"
-              placeholder="spread"
-              autoComplete="off"
-              value={channel.spread}
-              onChange={this.handleSpreadChange}
-            ></input>
-          </div>
+          <input
+            type="text"
+            className="form-control"
+            id="options-channel-spread"
+            placeholder="spread"
+            autoComplete="off"
+            value={channel.spread}
+            onChange={(e) => handleSpreadChange(e)}
+          ></input>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-const mapStateToProps = state => ({
-  channel: state.config.channel
+const mapStateToProps = (state) => ({
+  channel: state.config.channel,
 });
 
-export default connect(mapStateToProps, { updateChannel })(Channels);
+export default Channel;

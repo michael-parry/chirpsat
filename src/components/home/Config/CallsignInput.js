@@ -1,37 +1,27 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { updateCallsign } from "../../../actions/configActions";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateCallsign } from "../../../slices/configSlice";
 
-class CallsignInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: "" };
-  }
-  handleChange = e => {
-    this.setState({
-      value: e.target.value.toUpperCase()
-    });
+const CallsignInput = () => {
+  const dispatch = useDispatch();
+  const handleBlur = (newCallsign) => {
+    dispatch(updateCallsign(newCallsign));
   };
-  render() {
-    return (
-      <div className="form-group">
-        <label>Callsign</label>
-        <input
-          type="text"
-          name="callsign"
-          className="form-control"
-          autoComplete="off"
-          value={this.state.value}
-          onChange={this.handleChange}
-          onBlur={e => this.props.updateCallsign(e.target.value)}
-        />
-      </div>
-    );
-  }
-}
+  const [callsign, setCallsign] = useState("");
+  return (
+    <div className="form-group">
+      <label>Callsign</label>
+      <input
+        type="text"
+        name="callsign"
+        className="form-control"
+        autoComplete="off"
+        value={callsign}
+        onChange={(e) => setCallsign(e.target.value)}
+        onBlur={(e) => handleBlur(e.target.value)}
+      />
+    </div>
+  );
+};
 
-const mapStateToProps = state => ({
-  config: state.config
-});
-
-export default connect(mapStateToProps, { updateCallsign })(CallsignInput);
+export default CallsignInput;

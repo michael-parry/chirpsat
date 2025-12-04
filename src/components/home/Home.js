@@ -8,8 +8,7 @@ import Config from "./Config/Config";
 
 // react-bootstrap components
 
-export default class Home extends Component {
-  render() {
+const Home = () => {
     return (
       <>
         <Navbar />
@@ -20,4 +19,4 @@ export default class Home extends Component {
       </>
     );
   }
-}
+export default Home;

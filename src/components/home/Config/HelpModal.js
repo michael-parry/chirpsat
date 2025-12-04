@@ -1,25 +1,18 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
-export default class HelpModal extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false
-    };
-  }
-  handleClose = e => {
-    this.setState({ show: false });
+const HelpModal = props => {
+  const [modalVisibility, setModalVisibility] = useState({show:false})
+  const handleClose = e => {
+    setModalVisibility({ show: false });
   };
-  handleShow = e => {
-    e.preventDefault();
-    this.setState({ show: true });
+  const handleShow = e => {
+    setModalVisibility({show: true})
   };
-  render() {
-    const { body, title } = this.props;
+    const { body, title } = props;
     return (
       <>
         <a
@@ -27,7 +20,7 @@ export default class HelpModal extends Component {
           size="sm"
           className="m-1 p-1"
           href="#0"
-          onClick={this.handleShow}
+          onClick={handleShow}
         >
           <FontAwesomeIcon
             icon={faQuestionCircle}
@@ -35,13 +28,13 @@ export default class HelpModal extends Component {
             className="text-secondary"
           ></FontAwesomeIcon>
         </a>
-        <Modal show={this.state.show} onHide={this.handleClose} centered>
+        <Modal show={modalVisibility.show} onHide={handleClose} centered>
           <Modal.Header closeButton>
             <Modal.Title>{title}</Modal.Title>
           </Modal.Header>
           <Modal.Body>{body}</Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={this.handleClose}>
+            <Button variant="primary" onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>
@@ -49,4 +42,4 @@ export default class HelpModal extends Component {
       </>
     );
   }
-}
+export default HelpModal;
