@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRocket } from "@fortawesome/free-solid-svg-icons";

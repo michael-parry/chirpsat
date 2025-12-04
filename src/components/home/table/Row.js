@@ -1,6 +1,6 @@
 import React from "react";
 
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 export default function Row(props) {
   const contentArray = Object.values(props.rowContents);

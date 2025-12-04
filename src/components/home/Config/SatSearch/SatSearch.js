@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateSatellites } from "../../../../slices/configSlice";
 
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 import SatItem from "./SatItem";
 import SatItemActive from "./SatItemActive";

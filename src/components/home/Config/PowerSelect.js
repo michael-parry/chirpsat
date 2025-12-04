@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePower } from "../../../slices/configSlice";
-import {uuid} from 'uuidv4';
+import {v4 as uuid} from 'uuid';
 
 const PowerSelect = (props) => {
     const dispatch = useDispatch()
