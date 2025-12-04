@@ -1,14 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { updatePower } from "../../../actions/configActions";
-const uuidv4 = require("uuid/v4");
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updatePower } from "../../../slices/configSlice";
+import {uuid} from 'uuidv4';
 
-class PowerSelect extends Component {
-  render() {
+const PowerSelect = (props) => {
+    const dispatch = useDispatch()
+    const handleUpdatePower = (e) => {
+      dispatch(updatePower(e.target.value))
+    }
+    const radio = useSelector(state => state.config.radio)
+    const powerSelection = useSelector(state => state.config.power)
     const optionsList =
-      this.props.config.radio.power &&
-      this.props.config.radio.power.map(power => (
-        <option key={uuidv4()} value={power}>
+      radio.power &&
+      radio.power.map(power => (
+        <option key={uuid} value={power}>
           {power}
         </option>
       ));
@@ -20,8 +25,8 @@ class PowerSelect extends Component {
             name="power-select"
             id="power-select"
             className="form-control"
-            value={this.props.config.power}
-            onChange={this.props.updatePower}
+            value={powerSelection}
+            onChange={(e) => handleUpdatePower(e)}
           >
             <option value="Choose..">Choose..</option>
             {optionsList}
@@ -32,9 +37,6 @@ class PowerSelect extends Component {
         </div>
       </div>
     );
-  }
 }
-const mapStateToProps = state => ({
-  config: state.config
-});
-export default connect(mapStateToProps, { updatePower })(PowerSelect);
+
+export default PowerSelect;

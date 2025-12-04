@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { uuid } from "uuidv4";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,10 +9,10 @@ import Row from "./Row";
 
 import emptyChannel from "../../../json/emptyChannel";
 
-class Table extends Component {
-  render() {
-    const { start, spread } = this.props.config.channel;
-    const activeSatArray = this.props.config.sats
+const Table = (props) => {
+  const config = useSelector(state => state.config)
+    const { start, spread } = config.channel;
+    const activeSatArray = config.sats
       .filter(sat => sat.isActive === true)
       .sort((a, b) => (a.nickname < b.nickname ? -1 : 1));
     let isSpread = spread ? spread : 1;
@@ -54,17 +54,17 @@ class Table extends Component {
             1e-6
           ).toFixed(3);
         }
-        newChannel["Transmit Power"] = this.props.config.power;
+        newChannel["Transmit Power"] = config.power;
         newChannel["CTCSS/DCS Encode"] = sat.tone.toFixed(1);
-        newChannel["Contact"] = this.props.config.contact;
-        newChannel["Radio ID"] = this.props.config.callsign;
+        newChannel["Contact"] = config.contact;
+        newChannel["Radio ID"] = config.callsign;
         bodyContent.push(newChannel);
         totalCount++;
       }
     });
 
-    const tableRows = this.props.config.radio.channelDetails ? (
-      this.props.config.radio.channelDetails.map(column => (
+    const tableRows = config.radio.channelDetails ? (
+      config.radio.channelDetails.map(column => (
         <th key={uuid()} className="text-nowrap" value={column.class}>
           {column.title}
         </th>
@@ -78,7 +78,7 @@ class Table extends Component {
     let divContent = [];
     if (
       bodyContent.length === 0 ||
-      Object.entries(this.props.config.radio) < 1
+      Object.entries(config.radio) < 1
     ) {
       divContent = (
         <div className="d-flex bg-light h-100 align-items-center justify-content-center">
@@ -129,9 +129,5 @@ class Table extends Component {
       </div>
     );
   }
-}
-const mapStateToProps = state => ({
-  config: state.config
-});
 
-export default connect(mapStateToProps)(Table);
+export default Table;

@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 const classInactive = "list-group-item list-group-item-action bg-light";
 
-export default class SatItem extends Component {
-  render() {
+const SatItem = props => {
     return (
       <button
-        value={this.props.number}
-        className={this.props.isDisabled ? "d-none" : classInactive}
-        disabled={this.props.isDisabled}
-        onClick={this.props.handleSatClick.bind(this, this.props.number)}
+        value={props.number}
+        className={props.isDisabled ? "d-none" : classInactive}
+        disabled={props.isDisabled}
+        onClick={(e) => props.handleSatClick(props.number, e)}
       >
-        {this.props.nickname}
+        {props.nickname}
       </button>
     );
   }
-}
+export default SatItem

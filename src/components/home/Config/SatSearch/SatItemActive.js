@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 
-const classActive =
-  "list-group-item list-group-item-action bg-secondary text-white";
+const classActive = "list-group-item list-group-item-action bg-secondary text-white";
 
-export default class SatItem extends Component {
-  render() {
+const SatItem = (props) => {
     return (
       <button
-        key={this.props.number}
-        value={this.props.number}
+        key={props.number}
+        value={props.number}
         className={classActive}
-        disabled={this.props.isDisabled}
-        onClick={this.props.handleSatClick.bind(this, this.props.number)}
+        disabled={props.isDisabled}
+        onClick={(e) => props.handleSatClick(props.number, e)}
       >
-        {this.props.nickname}
+        {props.nickname}
       </button>
     );
   }
-}
+export default SatItem
