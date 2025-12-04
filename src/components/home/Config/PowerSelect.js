@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updatePower } from "../../../slices/configSlice";
 import {v4 as uuid} from 'uuid';

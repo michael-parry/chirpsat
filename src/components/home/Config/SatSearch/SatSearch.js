@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {useState} from "react";
+import { useDispatch } from "react-redux";
 import { updateSatellites } from "../../../../slices/configSlice";
 
 import { v4 as uuid } from "uuid";
@@ -29,8 +29,6 @@ const SatSearch = props => {
     setValue(e.target.value)
   };
   const handleSatClick = (id, e) => {
-    e.preventDefault();
-    
     let satObject = sats.find(
       sat => sat.number === parseInt(id)
     );

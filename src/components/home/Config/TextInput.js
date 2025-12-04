@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function TextInput(props) {
   const { label, name, placeholder, handleChange, modal } = props;
   return (

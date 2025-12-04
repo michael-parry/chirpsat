@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-
 const classActive = "list-group-item list-group-item-action bg-secondary text-white";
 
-const SatItem = (props) => {
+const SatItem = props => {
     return (
       <button
         key={props.number}

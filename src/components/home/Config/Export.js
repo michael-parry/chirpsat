@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -18,7 +18,9 @@ const Export = props => {
         id="sheet-update-form"
       >
         <button
-          className="btn btn-primary btn-large btn-block"
+          className="btn btn-primary btn-large btn-block focus-ring"
+          // INFO: the `focus-ring` CSS class replaces the default :hover with a box-shadow that is more editable
+          style={{boxShadow:'none'}}
           id="sheet-update-button"
           onClick={handleShow}
         >

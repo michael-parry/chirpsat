@@ -1,5 +1,3 @@
-import React, { Component } from "react";
-
 import Row from "react-bootstrap/Row";
 
 import Navbar from "../Navbar";

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Tone = () => {
     return (
       <div className="form-group">

@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { updateContact } from "../../../slices/configSlice";
 
@@ -11,7 +10,7 @@ import PowerSelect from "./PowerSelect";
 import Export from "./Export";
 import HelpModal from "./HelpModal";
 
-const body = //modal body for contact input
+const modalBody = //modal body for contact input
   (
     <>
       <p>
@@ -40,7 +39,7 @@ const Config = () => {
           name="channel-contact"
           label="Contact"
           handleChange={(e) => dispatch(updateContact(e.target.value))}
-          modal={<HelpModal body={body} title="Contact" />}
+          modal={<HelpModal body={modalBody} title="Contact" />}
         />
         <Channels />
         <PowerSelect/>
