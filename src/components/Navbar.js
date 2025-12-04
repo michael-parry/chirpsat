@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from "@fortawesome/fontawesome-free-brands";
 import { faGithub } from "@fortawesome/fontawesome-free-brands";
 
-export default class navbar extends Component {
-  render() {
+const Navbar = () => {
     return (
       <div className="navbar navbar-expand navbar-dark bg-primary sticky-top">
         <Link to="/" className="navbar-brand">
@@ -48,4 +47,4 @@ export default class navbar extends Component {
       </div>
     );
   }
-}
+  export default Navbar;

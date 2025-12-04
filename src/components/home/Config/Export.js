@@ -1,23 +1,17 @@
-import React, { Component } from "react";
+import React, {useState} from "react";
 
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-export default class Export extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false
-    };
-  }
-  handleClose = e => {
-    this.setState({ show: false });
+const Export = props => {
+  const [modalClosed, setModalClosed] = useState({show: false})
+  const handleClose = e => {
+    setModalClosed({ show: false });
   };
-  handleShow = e => {
+  const handleShow = e => {
     e.preventDefault();
-    this.setState({ show: true });
+    setModalClosed({ show: true });
   };
-  render() {
     return (
       <form
         className="form-group col mb-2 col-sm-5 mb-sm-0 col-lg-2  flex-d justify-content-center align-items-center"
@@ -26,14 +20,14 @@ export default class Export extends Component {
         <button
           className="btn btn-primary btn-large btn-block"
           id="sheet-update-button"
-          onClick={this.handleShow}
+          onClick={handleShow}
         >
           Export
         </button>
         <Modal
-          show={this.state.show}
+          show={modalClosed.show}
           size="sm"
-          onHide={this.handleClose}
+          onHide={handleClose}
           centered
         >
           <Modal.Header closeButton>
@@ -47,13 +41,13 @@ export default class Export extends Component {
             </p>
             <button
               class="btn btn-success btn-block"
-              onClick={this.handleClose}
+              onClick={handleClose}
             >
               Download
             </button>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={this.handleClose}>
+            <Button variant="primary" onClick={handleClose}>
               Close
             </Button>
           </Modal.Footer>
@@ -61,4 +55,4 @@ export default class Export extends Component {
       </form>
     );
   }
-}
+export default Export;

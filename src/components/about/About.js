@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Navbar from "../Navbar";
 import { HashLink as Link } from "react-router-hash-link";
 import { Container } from "react-bootstrap";
@@ -12,8 +12,7 @@ const asideStyle = {
   overflowY: "auto"
 };
 
-export default class home extends Component {
-  render() {
+const About = props => {
     return (
       <>
         <Navbar />
@@ -298,4 +297,4 @@ export default class home extends Component {
       </>
     );
   }
-}
+export default About;
