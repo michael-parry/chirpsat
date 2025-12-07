@@ -88,7 +88,7 @@ const About = props => {
                 How do I use it?
               </h2>
               <p>
-                ChirpSAT is easy to use, from the <Link to="/">home</Link> page
+                ChirpSAT is easy to use: from the <Link to="/">home</Link> page
                 select your radio. This will load options specific to your radio
                 and ensure that the <code>.csv</code> generated will be usable in your{" "}
                 <abbr title="customer programming software">CPS</abbr>.
@@ -175,7 +175,7 @@ const About = props => {
                 <abbr title="customer programming software">CPS</abbr> of your
                 choosing. If you've already created channels, you may want to
                 export the existing channels into a <code>.csv</code>, and combine the two by
-                copy-pasting from one to the other, then import the new file.
+                copy-pasting from one to the other, and then import the new file.
               </p>
             </Container>
             <Container>
