@@ -19,15 +19,15 @@ ChirpSAT is easy to use: from the home page select your radio. This will
 load options specific to your radio and ensure that the `.csv` generated
 will be usable in your CPS.
 
-If you've never programmed your radio before, check out\
-[Powerwerx](https://powerwerx.com/help/two-way-radios)\
-or\
-[BridgeCom Systems](https://www.bridgecomsystems.com/pages/support)\
+If you've never programmed your radio before, check out
+[Powerwerx](https://powerwerx.com/help/two-way-radios)
+or
+[BridgeCom Systems](https://www.bridgecomsystems.com/pages/support)
 for support on your radio and a download link to the programming
 software you need.
 
-Alternatively, you can use third-party software like\
-[CHIRP](https://chirp.danplanet.com/projects/chirp/wiki/Home),\
+Alternatively, you can use third-party software like
+[CHIRP](https://chirp.danplanet.com/projects/chirp/wiki/Home),
 but proceed at your own risk, the use of third-party software introduces
 its own risks.
 
