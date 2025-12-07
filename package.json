@@ -16,7 +16,6 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^14.6.1",
     "bootstrap": "^4.6.2",
-    "gh-pages": "^2.2.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^17.0.2",
@@ -53,6 +52,6 @@
   },
   "devDependencies": {
     "@redux-devtools/core": "^4.1.1",
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^6.3.0"
   }
 }
