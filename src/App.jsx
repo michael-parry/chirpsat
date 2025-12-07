@@ -1,4 +1,4 @@
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import Home from "./components/home/Home";
@@ -8,14 +8,10 @@ export default function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Router>
     </Provider>
   );
