@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateRadio } from "../../../slices/configSlice";
+import { radioUpdated } from "../../../slices/configSlice";
 
 import radios from "../../../json/radios";
 
@@ -7,7 +7,7 @@ const RadioSelect = (props) => {
   const dispatch = useDispatch();
   const { id: radioId } = useSelector((state) => state.config.radio);
   const handleChange = (e) => {
-    dispatch(updateRadio(e.target.value));
+    dispatch(radioUpdated(e.target.value));
   };
   const optionsList = radios.map((radio, index) => (
     <option key={index} value={radio.id} className="form-control">

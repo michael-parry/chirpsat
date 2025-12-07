@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { updateContact } from "../../../slices/configSlice";
+import { contactUpdated } from "../../../slices/configSlice";
 
 import TextInput from "./TextInput";
 import CallsignInput from "./CallsignInput";
@@ -38,7 +38,7 @@ const Config = () => {
         <TextInput
           name="channel-contact"
           label="Contact"
-          handleChange={(e) => dispatch(updateContact(e.target.value))}
+          handleChange={(e) => dispatch(contactUpdated(e.target.value))}
           modal={<HelpModal body={modalBody} title="Contact" />}
         />
         <Channels />

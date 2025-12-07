@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateCallsign } from "../../../slices/configSlice";
+import { callsignUpdated } from "../../../slices/configSlice";
 
 const CallsignInput = () => {
   const dispatch = useDispatch();
   const handleBlur = () => {
-    dispatch(updateCallsign(callsign));
+    dispatch(callsignUpdated(callsign));
   };
   const [callsign, setCallsign] = useState("");
   return (

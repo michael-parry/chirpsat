@@ -1,11 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { updatePower } from "../../../slices/configSlice";
+import { powerUpdated } from "../../../slices/configSlice";
 
 const PowerSelect = (props) => {
     const dispatch = useDispatch()
-    const handleUpdatePower = (e) => {
-      dispatch(updatePower(e.target.value))
-    }
     const radio = useSelector(state => state.config.radio)
     const powerSelection = useSelector(state => state.config.power)
     const optionsList =
@@ -24,7 +21,7 @@ const PowerSelect = (props) => {
             id="power-select"
             className="form-control"
             value={powerSelection}
-            onChange={(e) => handleUpdatePower(e)}
+            onChange={(e) => dispatch(powerUpdated(e.target.value))}
           >
             <option value="Choose..">Choose..</option>
             {optionsList}

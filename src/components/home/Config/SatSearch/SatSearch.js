@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateSatellites } from "../../../../slices/configSlice";
+import { satellitesUpdated } from "../../../../slices/configSlice";
 import SatItem from "./SatItem";
 
 import staticSats from "../../../../json/sats.json";
@@ -49,7 +49,7 @@ const SatSearch = (props) => {
       newSatObject,
     ].sort((a, b) => (a.nickname > b.nickname ? 1 : -1));
     setSats(newSatArray);
-    dispatch(updateSatellites(newSatArray.filter((sat) => sat.isActive)));
+    dispatch(satellitesUpdated(newSatArray.filter((sat) => sat.isActive)));
   };
 
   let currentSatArray;

@@ -14,28 +14,28 @@ const configSlice = createSlice({
   name: "config",
   initialState,
   reducers: {
-    updateCallsign: (state, action) => {
+    callsignUpdated: (state, action) => {
       console.log(state);
       state.callsign = action.payload;
     },
-    updateRadio: (state, action) => {
+    radioUpdated: (state, action) => {
       const foundRadio = radios.find(radio => radio.id === parseInt(action.payload));
       state.radio = foundRadio ? foundRadio : {};
       state.power = initialState.power;
     },
-    updateSatellites: (state, action) => {
+    satellitesUpdated: (state, action) => {
       state.sats = action.payload;
     },
-    updateContact: (state, action) => {
+    contactUpdated: (state, action) => {
       state.contact = action.payload !== "" ? action.payload : "Satellites";
     },
-    updateChannelStart: (state, action) => {
+    channelStartUpdated: (state, action) => {
       state.channel.start = action.payload;
     },
-    updateChannelSpread: (state, action) => {
+    channelSpreadUpdated: (state, action) => {
       state.channel.spread = action.payload;
     },
-    updatePower: (state, action) => {
+    powerUpdated: (state, action) => {
       console.log(action.payload);
       state.power = action.payload;
     }
@@ -43,13 +43,13 @@ const configSlice = createSlice({
 });
 
 export const {
-  updateCallsign,
-  updateRadio,
-  updateSatellites,
-  updateContact,
-  updateChannelStart,
-  updateChannelSpread,
-  updatePower
+callsignUpdated,
+radioUpdated,
+satellitesUpdated,
+contactUpdated,
+channelStartUpdated,
+channelSpreadUpdated,
+powerUpdated
 } = configSlice.actions;
 
 export default configSlice.reducer;

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-  updateChannelStart,
-  updateChannelSpread,
+  channelStartUpdated,
+  channelSpreadUpdated,
 } from "../../../slices/configSlice";
 
 import HelpModal from "./HelpModal";
@@ -28,13 +28,13 @@ const Channel = (props) => {
   const handleStartChange = (e) => {
     let re = /^[1-9]\d*$/;
     if (e.target.value === "" || re.exec(e.target.value)) {
-      dispatch(updateChannelStart(e.target.value));
+      dispatch(channelStartUpdated(e.target.value));
     }
   };
   const handleSpreadChange = (e) => {
     let re = /^[1-9]\d*$/;
     if (e.target.value === "" || re.exec(e.target.value)) {
-      dispatch(updateChannelSpread(e.target.value));
+      dispatch(channelSpreadUpdated(e.target.value));
     }
   };
   const { channel } = useSelector((state) => state.config);
