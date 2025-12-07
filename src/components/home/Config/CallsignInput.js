@@ -4,8 +4,8 @@ import { updateCallsign } from "../../../slices/configSlice";
 
 const CallsignInput = () => {
   const dispatch = useDispatch();
-  const handleBlur = (newCallsign) => {
-    dispatch(updateCallsign(newCallsign));
+  const handleBlur = () => {
+    dispatch(updateCallsign(callsign));
   };
   const [callsign, setCallsign] = useState("");
   return (
@@ -18,7 +18,7 @@ const CallsignInput = () => {
         autoComplete="off"
         value={callsign}
         onChange={(e) => setCallsign(e.target.value)}
-        onBlur={(e) => handleBlur(e.target.value)}
+        onBlur={handleBlur}
       />
     </div>
   );

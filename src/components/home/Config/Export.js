@@ -42,7 +42,7 @@ const Export = props => {
               them to your radio.
             </p>
             <button
-              class="btn btn-success btn-block"
+              className="btn btn-success btn-block"
               onClick={handleClose}
             >
               Download

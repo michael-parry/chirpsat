@@ -12,7 +12,7 @@ export default function TextInput(props) {
         className="form-control"
         placeholder={placeholder}
         autoComplete="off"
-        onBlur={handleChange ? handleChange.bind(this) : null}
+        onBlur={handleChange}
       />
     </div>
   );

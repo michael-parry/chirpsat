@@ -4,7 +4,7 @@ const Select = props => {
     props.onOptionChange(e.target.value);
   }
     const optionsList = props.Options.map(choice => (
-      <option value={choice.id} className="form-control">
+      <option key={choice.id} value={choice.id} className="form-control">
         {choice.title}
       </option>
     ));

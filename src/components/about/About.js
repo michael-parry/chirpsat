@@ -70,7 +70,7 @@ const About = props => {
               <p>
                 ChirpSAT is a web tool built for the amateur radio satellite
                 community. Its primary function is to generate channels with
-                doppler shift correction that can be easily imported into{" "}
+                Doppler shift correction that can be easily imported into{" "}
                 <abbr title="customer programming software">CPS</abbr> and
                 programmed to a radio.
               </p>
@@ -90,7 +90,7 @@ const About = props => {
               <p>
                 ChirpSAT is easy to use, from the <Link to="/">home</Link> page
                 select your radio. This will load options specific to your radio
-                and ensure that the .csv generated will be usable in your{" "}
+                and ensure that the <code>.csv</code> generated will be usable in your{" "}
                 <abbr title="customer programming software">CPS</abbr>.
               </p>
 
@@ -133,16 +133,16 @@ const About = props => {
                 to create channels for and program to your radio.
               </p>
               <p>
-                Next, choose which channel you would like to to start with. If
+                Next, choose which channel you would like to start with. If
                 you already have channels programmed into your radio, you may
                 want to start with a later, empty, channel. You can always
-                change your channel numbering on your own either with a .csv
-                editor like Excel or within your{" "}
+                change your channel numbering on your own either with a <code>.csv</code>
+                {" "}editor like Excel or within your{" "}
                 <abbr title="customer programming software">CPS</abbr>.
               </p>
               <p>
                 Satellite up-link and down-link data for the satellites you've
-                selected will be imported, which you can manually override by
+                selected will be imported. You can manually override this by
                 selecting the satellite dropdown, and choosing edit.
               </p>
 
@@ -170,12 +170,12 @@ const About = props => {
                 )&gt;
               </p>
               <p>
-                Lastly, you'll export your channels into a .csv file which you
+                Lastly, you'll export your channels into a <code>.csv</code> file which you
                 can import into the{" "}
                 <abbr title="customer programming software">CPS</abbr> of your
                 choosing. If you've already created channels, you may want to
-                export the existing channels into a .csv, and combine the two by
-                copy pasting from one to the other, then import the new file.
+                export the existing channels into a <code>.csv</code>, and combine the two by
+                copy-pasting from one to the other, then import the new file.
               </p>
             </Container>
             <Container>
@@ -200,7 +200,7 @@ const About = props => {
                   SatNOGS DB
                 </a>
                 , and the up-link and down-link frequencies are used to
-                automatically generate channels with doppler shift correction
+                automatically generate channels with Doppler shift correction
                 for easy programming.
               </p>
               <p>
@@ -212,7 +212,7 @@ const About = props => {
                 >
                   React
                 </a>
-                , styled by{" "}
+                , uses{" "}
                 <a
                   href="https://getbootstrap.com/"
                   target="_blank"
@@ -220,7 +220,7 @@ const About = props => {
                 >
                   Bootstrap
                 </a>
-                , and uses icons from{" "}
+                , and contains icons from{" "}
                 <a
                   href="https://www.fontawesome.com"
                   target="_blank"

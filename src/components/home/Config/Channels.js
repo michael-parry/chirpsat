@@ -53,7 +53,7 @@ const Channel = (props) => {
             placeholder="start"
             autoComplete="off"
             value={channel.start}
-            onChange={(e) => handleStartChange(e)}
+            onChange={handleStartChange}
           />
 
           <input
@@ -63,7 +63,7 @@ const Channel = (props) => {
             placeholder="spread"
             autoComplete="off"
             value={channel.spread}
-            onChange={(e) => handleSpreadChange(e)}
+            onChange={handleSpreadChange}
           ></input>
         </div>
       </div>

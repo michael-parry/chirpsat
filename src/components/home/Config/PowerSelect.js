@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { updatePower } from "../../../slices/configSlice";
-import {v4 as uuid} from 'uuid';
 
 const PowerSelect = (props) => {
     const dispatch = useDispatch()
@@ -11,8 +10,8 @@ const PowerSelect = (props) => {
     const powerSelection = useSelector(state => state.config.power)
     const optionsList =
       radio.power &&
-      radio.power.map(power => (
-        <option key={uuid} value={power}>
+      radio.power.map((power, index) => (
+        <option key={index} value={power}>
           {power}
         </option>
       ));

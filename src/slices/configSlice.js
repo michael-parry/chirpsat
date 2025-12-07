@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import sats from "../json/sats";
 import radios from "../json/radios";
 
 const initialState = {
   callsign: "",
   radio: {},
-  sats: sats,
+  sats: [],
   contact: "Satellites",
   channel: { start: "", spread: "" },
   power: "Choose.."

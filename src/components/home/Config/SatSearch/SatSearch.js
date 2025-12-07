@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateSatellites } from "../../../../slices/configSlice";
-
 import SatItem from "./SatItem";
 
 import staticSats from "../../../../json/sats.json";
@@ -35,7 +34,7 @@ const SatSearch = (props) => {
           return aSat ? 1 : -1;
         }
 
-        return a.nickname.localeCompare(b.nickname);
+        return a.nickname > b.nickname;
       });
   };
 
@@ -52,10 +51,11 @@ const SatSearch = (props) => {
     setSats(newSatArray);
     dispatch(updateSatellites(newSatArray.filter((sat) => sat.isActive)));
   };
+
   let currentSatArray;
   if (sats.filter((sat) => !sat.isActive).length === 0) {
     currentSatArray = (
-      <div className="list-group-item list-group-item-action bg-light">
+    <div className="list-group-item list-group-item-action bg-light">
         None found..
       </div>
     );
@@ -67,7 +67,7 @@ const SatSearch = (props) => {
       nickname={sat.nickname}
       isActive={sat.isActive}
       isDisabled={sat.disabled}
-      handleSatClick={handleSatClick}
+      onClick={handleSatClick}
     ></SatItem>
   ));
   return (
@@ -80,7 +80,7 @@ const SatSearch = (props) => {
           className="list-group-item"
           placeholder="Search.."
           value={value}
-          onChange={(e) => handleSatSearch(e)}
+          onChange={handleSatSearch}
         />
         {currentSatArray}
       </div>
