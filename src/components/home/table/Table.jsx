@@ -116,7 +116,7 @@ const Table = (props) => {
         </div>
     );
   }
-  return <div className="container h-100 p-0 col-md-9 col-sm-8">{divContent}</div>;
+  return <div className="container bg-light h-100 p-0 col-md-9 col-sm-8">{divContent}</div>;
 };
 
 export default Table;

@@ -9,14 +9,15 @@ const asideStyle = {
   width: "175px",
   left: 0,
   bottom: 0,
-  overflowY: "auto"
+  overflowY: "auto",
 };
 
-const About = props => {
-    return (
-      <>
-        <Navbar />
-        <div className="d-flex row mt-5 no-gutters justify-content-around">
+const About = (props) => {
+  return (
+    <>
+      <Navbar />
+      <div className="container">
+        <div className="row mt-5 justify-content-around">
           <aside className="col-2 mt-5 d-none d-lg-block" style={asideStyle}>
             <div className="list-group-flush">
               <Link
@@ -63,7 +64,7 @@ const About = props => {
                   style={{
                     marginTop: "-60px",
                     paddingBottom: "60px",
-                    display: "block"
+                    display: "block",
                   }}
                 ></span>
                 What is it?
@@ -83,7 +84,7 @@ const About = props => {
                   style={{
                     marginTop: "-60px",
                     paddingBottom: "60px",
-                    display: "block"
+                    display: "block",
                   }}
                 ></span>
                 How do I use it?
@@ -91,8 +92,8 @@ const About = props => {
               <p>
                 ChirpSAT is easy to use: from the <Link to="/">home</Link> page
                 select your radio. This will load options specific to your radio
-                and ensure that the <code>.csv</code> generated will be usable in your{" "}
-                <abbr title="customer programming software">CPS</abbr>.
+                and ensure that the <code>.csv</code> generated will be usable
+                in your <abbr title="customer programming software">CPS</abbr>.
               </p>
 
               <section className="container text-muted">
@@ -134,11 +135,11 @@ const About = props => {
                 to create channels for and program to your radio.
               </p>
               <p>
-                Next, choose which channel you would like to start with. If
-                you already have channels programmed into your radio, you may
-                want to start with a later, empty, channel. You can always
-                change your channel numbering on your own either with a <code>.csv</code>
-                {" "}editor like Excel or within your{" "}
+                Next, choose which channel you would like to start with. If you
+                already have channels programmed into your radio, you may want
+                to start with a later, empty, channel. You can always change
+                your channel numbering on your own either with a{" "}
+                <code>.csv</code> editor like Excel or within your{" "}
                 <abbr title="customer programming software">CPS</abbr>.
               </p>
               <p>
@@ -171,12 +172,13 @@ const About = props => {
                 )&gt;
               </p>
               <p>
-                Lastly, you'll export your channels into a <code>.csv</code> file which you
-                can import into the{" "}
+                Lastly, you'll export your channels into a <code>.csv</code>{" "}
+                file which you can import into the{" "}
                 <abbr title="customer programming software">CPS</abbr> of your
                 choosing. If you've already created channels, you may want to
-                export the existing channels into a <code>.csv</code>, and combine the two by
-                copy-pasting from one to the other, and then import the new file.
+                export the existing channels into a <code>.csv</code>, and
+                combine the two by copy-pasting from one to the other, and then
+                import the new file.
               </p>
             </Container>
             <Container>
@@ -186,7 +188,7 @@ const About = props => {
                   style={{
                     marginTop: "-60px",
                     paddingBottom: "60px",
-                    display: "block"
+                    display: "block",
                   }}
                 ></span>
                 How does it work?
@@ -239,7 +241,7 @@ const About = props => {
                   style={{
                     marginTop: "-60px",
                     paddingBottom: "60px",
-                    display: "block"
+                    display: "block",
                   }}
                 ></span>
                 Who made it?
@@ -274,7 +276,7 @@ const About = props => {
                   style={{
                     marginTop: "-60px",
                     paddingBottom: "60px",
-                    display: "block"
+                    display: "block",
                   }}
                 ></span>
                 How can I help?
@@ -292,9 +294,10 @@ const About = props => {
               </p>
             </Container>
           </article>
-          <div className="col-2 d-none d-lg-block"></div>
+          <aside className="col-2 d-none d-lg-block"></aside>
         </div>
-      </>
-    );
-  }
+      </div>
+    </>
+  );
+};
 export default About;
