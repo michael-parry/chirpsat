@@ -10,7 +10,7 @@ const Select = props => {
     ));
     const Option = props.SelectedOption;
     return (
-      <div className="form-group">
+      <>
         <select
           className="form-control"
           value={Option}
@@ -18,7 +18,7 @@ const Select = props => {
         >
           {optionsList}
         </select>
-      </div>
+      </>
     );
   }
 export default Select;

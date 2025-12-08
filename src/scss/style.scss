@@ -1,0 +1,20 @@
+// Customize Bootstrap variables above the import
+
+// $primary: #6f42c1;
+
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+// Utilize breakpoints below the import
+// Custom styling
+
+@include media-breakpoint-up(sm) {
+    #mainContentRow {
+        height: calc(100lvh - 56px);
+    }
+
+    #responsiveTableContainer,
+    #configContainer {
+        overflow-y:auto;
+        height: 100%;
+    }
+}

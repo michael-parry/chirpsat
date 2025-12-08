@@ -9,11 +9,11 @@ const CallsignInput = () => {
   };
   const [callsign, setCallsign] = useState("");
   return (
-    <div className="form-group">
-      <label>Callsign</label>
-      <input
+    <div className=" mb-3 mt-2">
+      <label className="form-label" for="callsignInput">Callsign</label>
+      <input 
         type="text"
-        name="callsign"
+        id="callsignInput"
         className="form-control"
         autoComplete="off"
         value={callsign}

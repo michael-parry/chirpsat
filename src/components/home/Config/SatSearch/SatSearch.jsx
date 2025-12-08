@@ -13,7 +13,7 @@ import staticSats from "../../../../json/sats.json";
 const SatSearch = (props) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState("");
-  const [sats, setSats] = useState(staticSats);
+  const [sats, setSats] = useState(staticSats.filter(sat => !sat.disabled));
 
   const handleSatSearch = (e) => {
     setValue(e.target.value);
@@ -40,6 +40,7 @@ const SatSearch = (props) => {
 
   const handleSatClick = (number) => {
     let foundSatObject = sats.find((sat) => sat.number === parseInt(number));
+    if (foundSatObject.disabled) { return }
     const newSatObject = {
       ...foundSatObject,
       isActive: !foundSatObject.isActive,
@@ -66,22 +67,22 @@ const SatSearch = (props) => {
       number={sat.number}
       nickname={sat.nickname}
       isActive={sat.isActive}
-      isDisabled={sat.disabled}
       onClick={handleSatClick}
     ></SatItem>
   ));
   return (
-    <div className="form-group">
-      <label>Satellites</label>
-      <div className="list-group" id="satListGroup">
-        <input
+    <div className="mb-2">
+      <label className="form-label" for="satListGroup">Satellites</label>
+      <input
           type="search"
           name="sat-search"
-          className="list-group-item"
+          className="form-control mb-2"
           placeholder="Search.."
+          id="satSearchInput"
           value={value}
           onChange={handleSatSearch}
         />
+      <div className="list-group" id="satListGroup">
         {currentSatArray}
       </div>
     </div>

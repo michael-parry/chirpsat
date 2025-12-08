@@ -1,4 +1,4 @@
-import Row from "react-bootstrap/Row";
+import { Container, Row } from "react-bootstrap";
 
 import Navbar from "../Navbar";
 import Table from "./table/Table";
@@ -10,9 +10,10 @@ const Home = () => {
     return (
       <>
         <Navbar />
-        <Row className="row m-0">
-          <Config />
-          <Table />
+        {/* `mainContentRow` Styled in style.scss for responsive 100vh height */}
+        <Row className="container-fluid m-0 p-0" id="mainContentRow"> 
+          <Config/>
+          <Table/>
         </Row>
       </>
     );

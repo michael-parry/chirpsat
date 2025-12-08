@@ -39,17 +39,16 @@ const Channel = (props) => {
   };
   const { channel } = useSelector((state) => state.config);
   return (
-    <div className="form-group">
-      <label>
+    <>
+      <label className="form-label" for="channelsStartSpread">
         Channels
         <HelpModal body={body} title="Channels" />
       </label>
-      <div className="form-row">
-        <div className="input-group col-12">
+        <div className="input-group mb-3" id="channelsStartSpread">
           <input
             type="text"
             className="form-control"
-            id="options-channel-start"
+            aria-label="Channel start"
             placeholder="start"
             autoComplete="off"
             value={channel.start}
@@ -59,15 +58,14 @@ const Channel = (props) => {
           <input
             type="text"
             className="form-control"
-            id="options-channel-spread"
+            aria-label="Channel spread"
             placeholder="spread"
             autoComplete="off"
             value={channel.spread}
             onChange={handleSpreadChange}
           ></input>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

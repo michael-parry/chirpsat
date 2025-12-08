@@ -15,8 +15,8 @@ const RadioSelect = (props) => {
     </option>
   ));
   return (
-    <div className="form-group">
-      <label name="radioInput">Radio</label>
+    <div className="mb-3">
+      <label className="form-label" for="radioInput">Radio</label>
       <select
         className="form-control"
         id="radioInput"

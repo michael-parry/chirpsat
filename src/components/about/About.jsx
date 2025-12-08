@@ -2,6 +2,7 @@ import Navbar from "../Navbar";
 import { HashLink as Link } from "react-router-hash-link";
 import { Container } from "react-bootstrap";
 
+// TODO: Refactor for Bootstrap v5 aside
 const asideStyle = {
   position: "fixed",
   top: "56px",
@@ -158,14 +159,14 @@ const About = props => {
                 name, and their channel offset relative to the center channel.
               </p>
               <samp>
-                <p className="text-muted ml-5">AO-92 (-3)</p>
+                <p className="text-muted ms-5">AO-92 (-3)</p>
               </samp>
               <p>
                 You can change the naming convention using{" "}
                 <code>#keywords#</code>. The default naming is:
               </p>
 
-              <p className="ml-5">
+              <p className="ms-5">
                 &lt;<code>#satellite_name#</code>(<code>#channel_offset#</code>
                 )&gt;
               </p>

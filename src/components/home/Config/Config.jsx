@@ -28,23 +28,26 @@ const Config = () => {
   return (
     <div
       // styled by style.css
-      className="col col-12 col-sm-5 col-lg-2  p-0"
-      id="config-container"
+      // `configContainer` styled in style.scss
+      className="container mb-md-0 col-sm-4 col-md-3" id="configContainer"
     >
-      <form className="container mt-2 d-flex flex-column" id="form-container">
+      <form className="form-container" autocomplete="off">
         <CallsignInput />
         <RadioSelect />
         <SatSearch />
         <TextInput
-          name="channel-contact"
+          name="channelContact"
           label="Contact"
           handleChange={(e) => dispatch(contactUpdated(e.target.value))}
           modal={<HelpModal body={modalBody} title="Contact" />}
         />
         <Channels />
-        <PowerSelect/>
+        <PowerSelect />
+        <div className="d-grid">
+        <Export />
+      </div>
       </form>
-      <Export />
+      
     </div>
   );
 };

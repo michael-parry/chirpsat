@@ -1,15 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Navbar = () => {
-    return (
-      <div className="navbar navbar-expand navbar-dark bg-primary sticky-top">
+  return (
+    <div className="navbar navbar-expand navbar-dark bg-primary">
+      <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           ChirpSAT
         </Link>
-
-        <ul className="navbar-nav">
+        <ul className="navbar-nav me-auto">
           <li className="nav-item">
             <NavLink
               to="/about"
@@ -20,29 +20,30 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        <ul className="navbar-nav ml-auto">
-          <li className="navbar-item">
-            <a
-              href="https://www.twitter.com/ke8kdf/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-            >
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-          </li>
-          <li className="navbar-item">
-            <a
-              href="https://github.com/michael-parry/chirpsat-react"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </li>
-        </ul>
       </div>
-    );
-  }
-  export default Navbar;
+      <ul className="navbar-nav">
+        <li className="navbar-item">
+          <a
+            href="https://www.twitter.com/ke8kdf/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link"
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+        </li>
+        <li className="navbar-item">
+          <a
+            href="https://github.com/michael-parry/chirpsat-react"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+export default Navbar;

@@ -1,14 +1,15 @@
 export default function TextInput(props) {
   const { label, name, placeholder, handleChange, modal } = props;
   return (
-    <div className="form-group">
-      <label>
+    <div className="mb-3">
+      <label className="form-label">
         {label}
         {modal}
       </label>
       <input
         type="text"
-        name={name}
+        id={name}
+        for={`${name}`}
         className="form-control"
         placeholder={placeholder}
         autoComplete="off"

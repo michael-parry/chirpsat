@@ -1,4 +1,4 @@
-const SatItem = ({ number, isActive, isDisabled, nickname, onClick }) => {
+const SatItem = ({ number, isActive, nickname, onClick }) => {
   const classInactive = "list-group-item list-group-item-action bg-light";
   const classActive =
     "list-group-item list-group-item-action bg-secondary text-white";
@@ -6,9 +6,8 @@ const SatItem = ({ number, isActive, isDisabled, nickname, onClick }) => {
     <button
       key={number}
       value={number}
-      type={"button"}
-      className={isDisabled ? "d-none" : isActive ? classActive : classInactive}
-      disabled={isDisabled}
+      type="button"
+      className={isActive ? classActive : classInactive}
       onClick={() => onClick(number)}
       preventScroll={true}
     >
