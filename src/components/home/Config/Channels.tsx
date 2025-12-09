@@ -1,8 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 import {
   channelStartUpdated,
   channelSpreadUpdated,
 } from "../../../slices/configSlice";
+
+
 import HelpModal from "./HelpModal";
 
 // modal body prop
@@ -26,24 +28,21 @@ const body = (
 const re = /^[1-9]\d*$/;
 
 const Channel = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch()
+
 
   type changeType = {
     type: "spread" | "start";
     e: React.ChangeEvent<HTMLInputElement>;
   };
 
-  type ConfigStateType = {
-    config: { channel: { start: string; spread: string } };
-  };
   const handleChange = ({ type, e }: changeType) => {
     if (!re.exec(e.target.value) || e.target.value == "") return
     type === "spread"
-      ? dispatch(channelSpreadUpdated(e.target.value))
-      : dispatch(channelStartUpdated(e.target.value));
+      ? dispatch(channelSpreadUpdated(parseInt(e.target.value)))
+      : dispatch(channelStartUpdated(parseInt(e.target.value)));
   };
-
-  const { channel } = useSelector((state: ConfigStateType) => state.config);
+  const { channel } = useAppSelector((state) => state.config);
   return (
     <>
       <label className="form-label" htmlFor="channelsStartSpread">

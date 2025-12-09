@@ -9,6 +9,7 @@ import Channels from "./Channels";
 import PowerSelect from "./PowerSelect";
 import Export from "./Export";
 import HelpModal from "./HelpModal";
+import { ReactEventHandler } from "react";
 
 const modalBody = //modal body for contact input
   (
@@ -38,7 +39,7 @@ const Config = () => {
         <TextInput
           name="channelContact"
           label="Contact"
-          handleChange={(e) => dispatch(contactUpdated(e.target.value))}
+          handleChange={(e:React.ChangeEvent<HTMLInputElement>) => dispatch(contactUpdated(e.target.value))}
           modal={<HelpModal body={modalBody} title="Contact" />}
         />
         <Channels />

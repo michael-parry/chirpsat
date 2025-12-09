@@ -9,9 +9,9 @@ export type SatType = {
     isActive:boolean
 };
 
-export type ConfigType = {
+export type ConfigState = {
   callsign: string;
-  radio: RadioType;
+  radio: RadioType | {};
   sats: SatType[];
   contact: string;
   channel: ChannelType;
@@ -29,8 +29,8 @@ export type RadioType = {
 };
 
 export type ChannelType = {
-  start: number;
-  spread: number;
+  start: number | "";
+  spread: number | "";
 };
 
 export type ChannelDetailsType = {

@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../store"
+import type { ConfigState } from "../types"
 import radios from "../json/radios.json";
 
-const initialState = {
+const initialState: ConfigState = {
   callsign: "",
   radio: {},
   sats: [],
@@ -15,8 +15,7 @@ const configSlice = createSlice({
   name: "config",
   initialState,
   reducers: {
-    callsignUpdated: (state, action) => {
-      console.log(state);
+    callsignUpdated: (state, action:PayloadAction<string>) => {
       state.callsign = action.payload;
     },
     radioUpdated: (state, action) => {
@@ -27,13 +26,13 @@ const configSlice = createSlice({
     satellitesUpdated: (state, action) => {
       state.sats = action.payload;
     },
-    contactUpdated: (state, action) => {
+    contactUpdated: (state, action:PayloadAction<string>) => {
       state.contact = action.payload !== "" ? action.payload : "Satellites";
     },
-    channelStartUpdated: (state, action) => {
+    channelStartUpdated: (state, action:PayloadAction<number | "">) => {
       state.channel.start = action.payload;
     },
-    channelSpreadUpdated: (state, action) => {
+    channelSpreadUpdated: (state, action:PayloadAction<number | "">) => {
       state.channel.spread = action.payload;
     },
     powerUpdated: (state, action) => {
