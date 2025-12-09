@@ -28,7 +28,7 @@ software you need.
 
 Alternatively, you can use third-party software like
 [CHIRP](https://chirp.danplanet.com/projects/chirp/wiki/Home),
-but proceed at your own risk, the use of third-party software introduces
+but proceed with caution; the use of third-party software introduces
 its own risks.
 
 With your radio selected, choose which satellites you would like to

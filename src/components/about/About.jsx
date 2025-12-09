@@ -126,7 +126,7 @@ const About = (props) => {
                   >
                     CHIRP
                   </a>
-                  , but proceed at your own risk, the use of third-party
+                  , but proceed with caution; the use of third-party
                   software introduces its own risks.
                 </p>
               </section>
