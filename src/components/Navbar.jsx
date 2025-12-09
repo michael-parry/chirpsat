@@ -13,8 +13,7 @@ const Navbar = () => {
           <li className="nav-item">
             <NavLink
               to="/about"
-              className="nav-link"
-              activeClassName="nav-link active"
+              className={nav => (nav.isActive ? "nav-link active" : "nav-link")}
             >
               About
             </NavLink>

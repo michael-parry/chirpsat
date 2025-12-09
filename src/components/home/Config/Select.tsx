@@ -1,6 +1,6 @@
 const Select = props => {
 
-  const handleChange = (e) => {
+  const handleChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
     props.onOptionChange(e.target.value);
   }
     const optionsList = props.Options.map(choice => (

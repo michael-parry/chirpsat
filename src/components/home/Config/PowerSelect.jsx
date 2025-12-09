@@ -14,7 +14,7 @@ const PowerSelect = (props) => {
     ));
   return (
     <div className="mb-3">
-      <label className="form-label" for="powerSelect">
+      <label className="form-label" htmlFor="powerSelect">
         Power
       </label>
       <div className="input-group">

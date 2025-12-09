@@ -31,7 +31,7 @@ const Config = () => {
       // `configContainer` styled in style.scss
       className="container mb-md-0 col-sm-4 col-md-3" id="configContainer"
     >
-      <form className="form-container" autocomplete="off">
+      <form className="form-container" autoComplete="off">
         <CallsignInput />
         <RadioSelect />
         <SatSearch />

@@ -72,7 +72,7 @@ const SatSearch = (props) => {
   ));
   return (
     <div className="mb-2">
-      <label className="form-label" for="satListGroup">Satellites</label>
+      <label className="form-label" htmlFor="satListGroup">Satellites</label>
       <input
           type="search"
           name="sat-search"

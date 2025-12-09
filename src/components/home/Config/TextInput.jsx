@@ -9,10 +9,9 @@ export default function TextInput(props) {
       <input
         type="text"
         id={name}
-        for={`${name}`}
+        htmlFor={`${name}`}
         className="form-control"
         placeholder={placeholder}
-        autoComplete="off"
         onBlur={handleChange}
       />
     </div>

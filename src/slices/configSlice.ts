@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import radios from "../json/radios";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../store"
+import radios from "../json/radios.json";
 
 const initialState = {
   callsign: "",

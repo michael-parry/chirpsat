@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { radioUpdated } from "../../../slices/configSlice";
 
-import radios from "../../../json/radios";
+import radios from "../../../json/radios.json";
 
 const RadioSelect = (props) => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const RadioSelect = (props) => {
   ));
   return (
     <div className="mb-3">
-      <label className="form-label" for="radioInput">Radio</label>
+      <label className="form-label" htmlFor="radioInput">Radio</label>
       <select
         className="form-control"
         id="radioInput"
