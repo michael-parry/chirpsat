@@ -4,25 +4,29 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 
-const HelpModal = props => {
+type ModalProps = {
+  body: React.ReactNode
+  title:string
+}
+
+const HelpModal = (props:ModalProps) => {
   const [modalVisibility, setModalVisibility] = useState({show:false})
-  const handleClose = e => {
+  const handleClose = () => {
     setModalVisibility({ show: false });
   };
-  const handleShow = e => {
+  const handleShow = () => {
     setModalVisibility({show: true})
   };
     const { body, title } = props;
     return (
       <>
         <a
-          variant="white"
-          size="sm"
           className="m-1 p-1"
           href="#0"
           onClick={handleShow}
         >
           <FontAwesomeIcon
+          
             icon={faQuestionCircle}
             size="xs"
             className="text-secondary"

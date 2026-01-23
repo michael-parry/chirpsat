@@ -5,7 +5,7 @@
     "Receive Frequency": "000.00",
     "Transmit Frequency": "000.00",
     "Channel Type": "A-Analog",
-    "Transmit Power": "Choose..",
+    "Transmit Power": null,
     "Band Width": "25K",
     "CTCSS/DCS Decode": "000.0",
     "CTCSS/DCS Encode": "000.0",

@@ -11,7 +11,7 @@ const CallsignInput = () => {
   };
   const [callsign, setCallsign] = useState("");
   return (
-    <div className=" mb-3 mt-2">
+    <div className=" mt-3">
       <label className="form-label" htmlFor="callsignInput">Callsign</label>
       <input 
         type="text"

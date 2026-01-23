@@ -1,6 +1,11 @@
 import { v4 as uuid } from "uuid";
+import { EmptyChannelType } from "../../../types";
 
-export default function TableRow(props) {
+type TableRowProps = {
+  rowContents:EmptyChannelType
+}
+
+export default function TableRow(props:TableRowProps) {
   const contentArray = Object.values(props.rowContents);
   const rowContent = contentArray.map(data => (
     <td key={uuid()} className="table-data text-nowrap">

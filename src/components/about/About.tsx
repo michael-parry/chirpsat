@@ -3,7 +3,7 @@ import { HashLink as Link } from "react-router-hash-link";
 import { Container } from "react-bootstrap";
 
 // TODO: Refactor for Bootstrap v5 aside
-const asideStyle = {
+const asideStyle:React.CSSProperties = {
   position: "fixed",
   top: "56px",
   width: "175px",
@@ -12,7 +12,7 @@ const asideStyle = {
   overflowY: "auto",
 };
 
-const About = (props) => {
+const About = () => {
   return (
     <>
       <Navbar />

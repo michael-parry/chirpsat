@@ -1,10 +1,8 @@
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import Navbar from "../Navbar";
 import Table from "./Table/Table";
 import Config from "./Config/Config";
-
-// react-bootstrap components
 
 const Home = () => {
     return (

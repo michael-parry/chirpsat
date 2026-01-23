@@ -1,19 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { powerUpdated } from "../../../slices/configSlice";
 
-const PowerSelect = (props) => {
-  const dispatch = useDispatch();
-  const radio = useSelector((state) => state.config.radio);
-  const powerSelection = useSelector((state) => state.config.power);
+const PowerSelect = () => {
+  const dispatch = useAppDispatch();
+  const radio = useAppSelector((state) => state.config.radio);
+  const powerSelection = useAppSelector((state) => state.config.power);
   const optionsList =
+  // TODO: Refactor so that radio.power has more clarity and type checking isn't necessary. Maybe a null default/ null short circuit?
     radio.power &&
-    radio.power.map((power, index) => (
+    radio.power.map((power:string, index:number) => (
       <option key={index} value={power}>
         {power}
       </option>
     ));
   return (
-    <div className="mb-3">
+    <div className="mt-3">
       <label className="form-label" htmlFor="powerSelect">
         Power
       </label>

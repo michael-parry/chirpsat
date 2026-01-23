@@ -3,13 +3,14 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const Export = (props) => {
+const Export = () => {
   const [modalClosed, setModalClosed] = useState({ show: false });
-  const handleClose = (e) => {
+  const handleClose = (e?:React.MouseEvent<HTMLButtonElement>) => {
+    e && e.preventDefault()
     setModalClosed({ show: false });
   };
-  const handleShow = (e) => {
-    e.preventDefault();
+  const handleShow = (e?:React.MouseEvent<HTMLButtonElement>) => {
+    e && e.preventDefault();
     setModalClosed({ show: true });
   };
   return (
