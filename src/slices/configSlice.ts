@@ -8,7 +8,7 @@ const initialState: ConfigState = {
 	sats: [],
 	contact: "",
 	channel: { start: "", spread: "" },
-	power: "",
+	power: null,
 };
 
 const configSlice = createSlice({
@@ -46,7 +46,6 @@ const configSlice = createSlice({
 			}
 		},
 		powerUpdated: (state, action) => {
-			console.log(action.payload);
 			state.power = action.payload;
 		},
 	},

@@ -20,7 +20,7 @@ const RadioSelect = () => {
       <select
         className="form-control"
         id="radioInput"
-        value={radioId}
+        value={radioId ? radioId : ""}
         onChange={handleChange}
       >
         <option value="">Choose..</option>

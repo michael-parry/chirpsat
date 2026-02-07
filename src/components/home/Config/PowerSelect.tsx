@@ -22,7 +22,7 @@ const PowerSelect = () => {
         <select
           id="powerSelect"
           className="form-select"
-          value={powerSelection}
+          value={powerSelection ? powerSelection : ""}
           onChange={(e) => dispatch(powerUpdated(e.target.value))}
         >
           <option value="Choose..">Choose..</option>

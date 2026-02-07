@@ -39,7 +39,7 @@ export type ChannelDetailsType = {
 	class: string;
 };
 
-export type PowerType = string[] | undefined
+export type PowerType = string[] | null
 export type FrequencyType = BigInt64Array;
 
 

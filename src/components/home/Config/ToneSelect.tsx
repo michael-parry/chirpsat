@@ -16,7 +16,7 @@ const Tone = () => {
 const selectId = 'toneSelect'
 type ToneType = {tone:string | undefined}
 const span = <span className="input-group-text">Hz</span>
-const [toneSelect, setToneSelect] = useState({tone:undefined} as ToneType)
+const [toneSelect, setToneSelect] = useState({tone:""} as ToneType)
 const toneOptions = tones.map(tone => ({id:tone, title:tone.toFixed(1)}))
 const handleChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
   setToneSelect({tone:e.target.value})
@@ -28,7 +28,7 @@ const handleChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
       id = {selectId}
       options={toneOptions}
       onOptionChange={handleChange}
-      selectedOption={`${toneSelect.tone}`}
+      selectedOption={`${toneSelect.tone ? toneSelect.tone : ""}`}
       span={span}
       />
       </div>
