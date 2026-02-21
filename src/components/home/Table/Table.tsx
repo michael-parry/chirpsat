@@ -15,9 +15,8 @@ const Table = () => {
 	const config = useAppSelector(state => state.config);
 	const { start, spread } = config.channel;
   // Sort the sats from state alphabetically and store in activeSatArray
-	const activeSatArray = config.sats
+	const activeSatArray = config.sats.slice()
 		.sort((a, b) => (a.nickname.localeCompare(b.nickname)));
-
 	let spreadNumber = spread ? spread : 1;
 	if (spread && spread % 2 === 0) {
 		spreadNumber = spread - 1;
