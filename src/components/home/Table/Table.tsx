@@ -60,7 +60,8 @@ const Table = () => {
 	});
 
 	let divContent: React.ReactNode;
-	if (bodyContent.length === 0 || Object.entries(config.radio).length < 1) {
+	const { radio } = config
+	if (bodyContent.length === 0 || !radio) {
 		divContent = (
 			<div className="d-flex bg-light h-100 align-items-center justify-content-center">
 				<FontAwesomeIcon
@@ -90,8 +91,8 @@ const Table = () => {
 		);
 	} else {
 
-    const tableRows = config.radio.channelDetails ? (
-		config.radio.channelDetails.map(column => (
+    const tableRows = radio.channelDetails ? (
+		radio.channelDetails.map(column => (
 			<th key={uuid()} className="text-nowrap">
 				{column.title}
 			</th>

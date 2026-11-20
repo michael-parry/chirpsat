@@ -5,7 +5,7 @@ import radios from "../../../json/radios.json";
 
 const RadioSelect = () => {
   const dispatch = useAppDispatch();
-  const { id: radioId } = useAppSelector((state) => state.config.radio);
+  const radioId = useAppSelector((state) => state.config.radio?.id);
   const handleChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(radioUpdated(e.target.value));
   };

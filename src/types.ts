@@ -11,11 +11,11 @@ export type SatType = {
 
 export type ConfigState = {
 	callsign: string;
-	radio: RadioType | object;
+	radio: RadioType | null;
 	sats: SatType[];
 	contact: string;
 	channel: ChannelType;
-	power: PowerType;
+	power: SelectedPowerType;
 	bandwidth?: number[];
 };
 
@@ -25,7 +25,7 @@ export type RadioType = {
 	id: number;
 	brand: string;
 	model: string;
-	power: PowerType
+	power: PowerLevelType
 	channelDetails: ChannelDetailsType[];
 };
 
@@ -39,8 +39,11 @@ export type ChannelDetailsType = {
 	class: string;
 };
 
-export type PowerType = string[] | null
+export type PowerLevelType = string
+export type SelectedPowerType = PowerLevelType[]
+
 export type FrequencyType = BigInt64Array;
+
 
 
 export type EmptyChannelType = {
@@ -49,7 +52,7 @@ export type EmptyChannelType = {
   "Receive Frequency": string;
   "Transmit Frequency": string;
   "Channel Type": string;
-  "Transmit Power": PowerType;
+  "Transmit Power": PowerLevelType;
   "Band Width": string;
   "CTCSS/DCS Decode": string;
   "CTCSS/DCS Encode": string;

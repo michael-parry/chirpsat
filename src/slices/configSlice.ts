@@ -4,7 +4,7 @@ import radios from "../json/radios.json";
 
 const initialState: ConfigState = {
 	callsign: "",
-	radio: {},
+	radio: null,
 	sats: [],
 	contact: "",
 	channel: { start: "", spread: "" },
@@ -22,7 +22,7 @@ const configSlice = createSlice({
 			const foundRadio = radios.find(
 				radio => radio.id === parseInt(action.payload),
 			);
-			state.radio = foundRadio ? foundRadio : {};
+			state.radio = foundRadio ?? null;
 			state.power = initialState.power;
 		},
 		satellitesUpdated: (state, action) => {

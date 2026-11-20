@@ -3,6 +3,8 @@
     "name": "AnyTone 878",
     "name_concat": "anytone878",
     "id": 1,
+    "brand": "AnyTone",
+    "model": "at878",
     "channelDetails": [
       {
         "title": "No.",
